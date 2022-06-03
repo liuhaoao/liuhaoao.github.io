@@ -20,24 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="这是一个一级标题这是一个er级标题试试代码块怎么写1#include &lt;stdio&gt;  试试字体格式[TOC] 正常的加粗  下面介绍一下耀耀的女朋友  下面是耀耀的小妾（有点多就例举其中一个）  ? 超链接怎么加这样加 可以加表格吗   问题 答案    施证耀帅吗 帅的   朱骋骁是沙雕吗 显然是的   什么是列表 哇 wa   哇 wa 还能缩进    脚注   哇  哇  什么">
+  <meta name="description" content="矩阵的秩要不来写写矩阵的秩吧 首先我们来介绍一下矩阵秩的定义。书中最早给出秩的定义是通过引入k阶子式的方法进行解释，认为对于某个矩阵A来说，它的最高阶的非零子式的阶数就是矩阵A的秩，记作R(A)。看到这样的定义，相信大多数同学心里都是这样想的：“嗯，我知道什么是矩阵的秩了，我也能去求出它了，但是矩阵的秩到底有什么作用呢？”很有幸，我们的线性代数书本注意到了我们的诉求，后面花费大量篇幅来呈现矩阵的秩">
 <meta property="og:type" content="article">
-<meta property="og:title" content="什么是title">
-<meta property="og:url" content="http://example.com/2022/03/27/%E5%8F%AF%E4%BB%A5%E5%8F%91%E9%80%81%E5%90%97/index.html">
+<meta property="og:title" content="矩阵的秩">
+<meta property="og:url" content="http://example.com/2022/06/04/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9/index.html">
 <meta property="og:site_name" content="耀耀的小木屋">
-<meta property="og:description" content="这是一个一级标题这是一个er级标题试试代码块怎么写1#include &lt;stdio&gt;  试试字体格式[TOC] 正常的加粗  下面介绍一下耀耀的女朋友  下面是耀耀的小妾（有点多就例举其中一个）  ? 超链接怎么加这样加 可以加表格吗   问题 答案    施证耀帅吗 帅的   朱骋骁是沙雕吗 显然是的   什么是列表 哇 wa   哇 wa 还能缩进    脚注   哇  哇  什么">
+<meta property="og:description" content="矩阵的秩要不来写写矩阵的秩吧 首先我们来介绍一下矩阵秩的定义。书中最早给出秩的定义是通过引入k阶子式的方法进行解释，认为对于某个矩阵A来说，它的最高阶的非零子式的阶数就是矩阵A的秩，记作R(A)。看到这样的定义，相信大多数同学心里都是这样想的：“嗯，我知道什么是矩阵的秩了，我也能去求出它了，但是矩阵的秩到底有什么作用呢？”很有幸，我们的线性代数书本注意到了我们的诉求，后面花费大量篇幅来呈现矩阵的秩">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://th.bing.com/th/id/OIP.nfC2tVNM9TgwQ5QuqECd6wHaFj?w=244&h=183&c=7&r=0&o=5&dpr=1.5&pid=1.7">
-<meta property="og:image" content="https://th.bing.com/th/id/OIP.2t-RC3EJroXlVWLTenviOgHaKd?w=203&h=287&c=7&r=0&o=5&dpr=1.5&pid=1.7">
-<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/0089A3Blly1h1cniwwio7j30u0140tgl.jpg">
-<meta property="article:published_time" content="2022-03-26T17:37:37.068Z">
-<meta property="article:modified_time" content="2022-06-03T17:33:56.787Z">
+<meta property="article:published_time" content="2022-06-03T17:20:04.596Z">
+<meta property="article:modified_time" content="2022-06-03T17:43:24.297Z">
 <meta property="article:author" content="耀耀">
 <meta property="article:tag" content="-哦">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://th.bing.com/th/id/OIP.nfC2tVNM9TgwQ5QuqECd6wHaFj?w=244&h=183&c=7&r=0&o=5&dpr=1.5&pid=1.7">
 
-<link rel="canonical" href="http://example.com/2022/03/27/%E5%8F%AF%E4%BB%A5%E5%8F%91%E9%80%81%E5%90%97/">
+<link rel="canonical" href="http://example.com/2022/06/04/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9/">
 
 
 <script id="page-configurations">
@@ -50,7 +46,7 @@
   };
 </script>
 
-  <title>什么是title | 耀耀的小木屋</title>
+  <title>矩阵的秩 | 耀耀的小木屋</title>
   
 
 
@@ -171,7 +167,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/27/%E5%8F%AF%E4%BB%A5%E5%8F%91%E9%80%81%E5%90%97/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/04/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -184,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          什么是title
+          矩阵的秩
         </h1>
 
         <div class="post-meta">
@@ -193,23 +189,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-03-27 01:37:37" itemprop="dateCreated datePublished" datetime="2022-03-27T01:37:37+08:00">2022-03-27</time>
+              <time title="创建时间：2022-06-04 01:20:04 / 修改时间：01:43:24" itemprop="dateCreated datePublished" datetime="2022-06-04T01:20:04+08:00">2022-06-04</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-04 01:33:56" itemprop="dateModified" datetime="2022-06-04T01:33:56+08:00">2022-06-04</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%95%E6%B0%B4/" itemprop="url" rel="index"><span itemprop="name">-试水</span></a>
+                  <a href="/categories/%E9%9A%BE%E9%81%93%E6%98%AF%E8%AF%BE%E5%A0%82%E6%8A%A5%E5%91%8A%E5%98%9B/" itemprop="url" rel="index"><span itemprop="name">-难道是课堂报告嘛</span></a>
                 </span>
             </span>
 
@@ -224,55 +214,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="这是一个一级标题"><a href="#这是一个一级标题" class="headerlink" title="这是一个一级标题"></a>这是一个一级标题</h1><h2 id="这是一个er级标题"><a href="#这是一个er级标题" class="headerlink" title="这是一个er级标题"></a>这是一个er级标题</h2><h3 id="试试代码块怎么写"><a href="#试试代码块怎么写" class="headerlink" title="试试代码块怎么写"></a>试试代码块怎么写</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<h4 id="试试字体格式"><a href="#试试字体格式" class="headerlink" title="试试字体格式"></a>试试字体格式</h4><p>[TOC]</p>
-<h1 id="正常的"><a href="#正常的" class="headerlink" title="正常的"></a>正常的</h1><p><del>加粗</del></p>
-<p><img src="https://th.bing.com/th/id/OIP.nfC2tVNM9TgwQ5QuqECd6wHaFj?w=244&h=183&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="tpian"></p>
-<p>下面介绍一下耀耀的女朋友</p>
-<p><img src="https://th.bing.com/th/id/OIP.2t-RC3EJroXlVWLTenviOgHaKd?w=203&h=287&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="jjy"></p>
-<p>下面是耀耀的小妾（有点多就例举其中一个）</p>
-<p><img src="https://wx3.sinaimg.cn/mw690/0089A3Blly1h1cniwwio7j30u0140tgl.jpg"></p>
-<p>?</p>
-<h3 id="超链接怎么加"><a href="#超链接怎么加" class="headerlink" title="超链接怎么加"></a>超链接怎么加</h3><p><a target="_blank" rel="noopener" href="https://www.baidu.com/">这样加</a></p>
-<h3 id="可以加表格吗"><a href="#可以加表格吗" class="headerlink" title="可以加表格吗"></a>可以加表格吗</h3><table>
-<thead>
-<tr>
-<th align="left">问题</th>
-<th>答案</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">施证耀帅吗</td>
-<td>帅的</td>
-</tr>
-<tr>
-<td align="left">朱骋骁是沙雕吗</td>
-<td>显然是的</td>
-</tr>
-</tbody></table>
-<h2 id="什么是列表"><a href="#什么是列表" class="headerlink" title="什么是列表"></a>什么是列表</h2><ol>
-<li>哇</li>
-<li>wa</li>
-</ol>
-<ul>
-<li>哇<ul>
-<li>wa 还能缩进</li>
-</ul>
-</li>
-</ul>
-<p>脚注</p>
-<ul>
-<li><input checked disabled type="checkbox"> 哇</li>
-<li><input disabled type="checkbox"> 哇</li>
-</ul>
-<h3 id="什么是引用"><a href="#什么是引用" class="headerlink" title="什么是引用"></a>什么是引用</h3><blockquote>
-<p>某某作者</p>
-<p>哦哦哦</p>
-</blockquote>
-<h3 id="什么是分割线"><a href="#什么是分割线" class="headerlink" title="什么是分割线"></a>什么是分割线</h3><hr>
-<p>这个就是</p>
-<p>再试试</p>
+        <h1 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h1><p>要不来写写矩阵的秩吧</p>
+<p>首先我们来介绍一下矩阵秩的定义。书中最早给出秩的定义是通过引入k阶子式的方法进行解释，认为对于某个矩阵A来说，它的最高阶的非零子式的阶数就是矩阵A的秩，记作R(A)。看到这样的定义，相信大多数同学心里都是这样想的：“嗯，我知道什么是矩阵的秩了，我也能去求出它了，但是矩阵的秩到底有什么作用呢？”很有幸，我们的线性代数书本注意到了我们的诉求，后面花费大量篇幅来呈现矩阵的秩的用处，它应用于线性方程组解的判定，向量组是否线性相关或无关的判定，以及是否可以对角化的判定。</p>
+<p>我认为，秩本质上就是有效表达式的个数，其中的有效表达式在不同的情况下有着不同的涵义：在线性方程组中，有效表达式指的就是有效方程组的个数；在列向量中就是线性无关向量的个数。同时我们也要指出的是，线性相关实际上和秩有着密切的关系，初等变换不改变矩阵的秩，而线性相关本质上就是进行初等变换，用某些向量来表示某个向量。当某个向量有能够被线性表示时，矩阵的秩就要在原先个数的基础上减一，然后再次寻找能够被线性表示的向量，再去掉，不断重复，最终留下的线性无关的个数就是矩阵的秩。那么有同学可能会质疑，去掉了那个线性相关的列向量之后，对于后续线性相关的判断是否会产生影响？这显然是不会的，假设之后准备找出的那个向量由被删的向量表示，但是由于被删的向量能够被剩下的其他向量表示，所以不会产生任何影响。</p>
+<p>接下来，讲讲解和秩的关系。在这之前，我们先讲讲线性方程组和列向量之间的关系。在我看来，线性方程组的解本质上就是一个列向量<strong>b</strong>由系数列向量组A线性表达的方式，这个方式也许是唯一的，也许是有无数种表达方式的，也许是找不到表达方式的。这与方程有解，有无数解，无解一一对应。P72定理3说：当 R(<strong>A</strong>) &#x3D; R(<strong>B</strong>) 时，等价于列向量b能够被线性表示，也就是有解。当R(<strong>A</strong>) &lt; R(<strong>B</strong>) 时，等价于列向量b不能够被线性表示，也就是无解。当然，书中详细给出了找到这种表达方式的各种方法，例如做初等行变，并从齐次方程组的角度给出的基础解系的概念，而基础解系是线性无关的，所以基础解系的个数就是基础解析的秩，每一个解向量都是有效的。所以，对于有n个变量的线性方程组，就需要n个有效的的方程去限制才能使它的解唯一。如果有效方程组的个数小于n，则有无数解，则需要通过基础解析去弥补，每少一个有效方程组，则需要多一个线性无关的通解，基础解系的秩也要进行加一。最终能够得到这样一个结论：方程组系数矩阵的秩与基础解系的秩相加等于变量的个数。（P99定理7原话：设m<em>n矩阵A的秩R(<strong>A</strong>)&#x3D; r，则n元齐次线性方程组Ax&#x3D;0的解集S的秩*<em>Rs</em></em>&#x3D;<strong>n-r</strong>）若把列向量进行拓展，变为多个列向量构成的矩阵。这个矩阵有n列则需要由n个解向量去表示。这也就是矩阵乘法的意义之一。</p>
+<p>讲完了矩阵的秩应用于解的判定的相关内容，我们再来讲述矩阵的秩和方阵是否可以对角化的关系。是否能够对角化主要取决于它是否有n个线性无关的特征向量，当然它也存在一个更严格的条件：方阵 A有n个不同的值。因为不同的值所确定的向量一定线性无关，所以也一定有n个线性无关的特征向量。从秩的角度去考虑也就是特征向量的秩为n。</p>
+<p>再解释一个问题：矩阵A的行，列向量的秩为什么与矩阵的秩相同呢？</p>
+<p>列向量的秩等于矩阵的秩通过前面讲述的秩的本质和线性无关的秩的关系即可理解。这里主要讲述列向量为什么等于行向量。我们从向量空间的角度进行考虑。若矩阵的行列个数不等，假设m&gt;n。那么直观上感受，行向量的秩是可以大于列向量的秩的。但是，请把行向量作为一个向量空间。他的变量个数是由列数来控制的，所以它最多只能表示一个n维空间，是个数书中说到“线性无关的向量的个数，就是空间的维数”。所以他的秩最大只能是列向量的秩，而且列向量的秩就是行向量有效变量的个数，也就证明了列向量的秩等于行向量的秩。</p>
+<p>在文章的最后部分，我们提供矩阵的秩相关的等式与不等式以及他们的运用。</p>
+<p>最著名的等式在之前已经提及方程组系数矩阵的秩与基础解系的秩相加等于变量的个数。（P99定理7）用于间接判断基础解系的向量个数十分方便。由它还能得到一个推论（<strong>AB&#x3D;0,则R(A)+R(B)&lt;&#x3D;n</strong>）<strong>A</strong>就是系数矩阵，<strong>B</strong>就是基础解系的组合。还有一个比较有意思的性质（例9：若<strong>AB&#x3D;C</strong>，且<strong>R(A)&#x3D;n</strong>,<strong>R(B)&#x3D;R(C).<strong>），也就是说，若列向量组A线性无关，则当由它表示的列向量</strong>b</strong>有多个且线性无关时，对应的解向量也线性无关。所以，<strong>AB</strong>&#x3D;<strong>0</strong>时，这也就是线性无关的最初定义。当然还有各类不等式，例如，用的时候随机应变，这里不再一一赘述。</p>
+<p>以上便是本人对矩阵的秩的一些见解，由于水平受限，其中存在一定的纰漏，更恳请老师批评指正！</p>
 
     </div>
 
@@ -291,13 +242,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/22/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
+    <a href="/2022/03/27/%E5%8F%AF%E4%BB%A5%E5%8F%91%E9%80%81%E5%90%97/" rel="prev" title="什么是title">
+      <i class="fa fa-chevron-left"></i> 什么是title
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/06/04/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9/" rel="next" title="矩阵的秩">
-      矩阵的秩 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -356,7 +304,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">这是一个一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AAer%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">这是一个er级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%95%E8%AF%95%E4%BB%A3%E7%A0%81%E5%9D%97%E6%80%8E%E4%B9%88%E5%86%99"><span class="nav-number">1.1.1.</span> <span class="nav-text">试试代码块怎么写</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%95%E8%AF%95%E5%AD%97%E4%BD%93%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">试试字体格式</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E7%9A%84"><span class="nav-number">2.</span> <span class="nav-text">正常的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5%E6%80%8E%E4%B9%88%E5%8A%A0"><span class="nav-number">2.0.1.</span> <span class="nav-text">超链接怎么加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E5%8A%A0%E8%A1%A8%E6%A0%BC%E5%90%97"><span class="nav-number">2.0.2.</span> <span class="nav-text">可以加表格吗</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%97%E8%A1%A8"><span class="nav-number">2.1.</span> <span class="nav-text">什么是列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%95%E7%94%A8"><span class="nav-number">2.1.1.</span> <span class="nav-text">什么是引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">2.1.2.</span> <span class="nav-text">什么是分割线</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="nav-number">1.</span> <span class="nav-text">矩阵的秩</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

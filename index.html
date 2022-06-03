@@ -164,6 +164,83 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/04/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="耀耀">
+      <meta itemprop="description" content="风流倜傥美少年，揽镜自顾夜不眠">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耀耀的小木屋">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/04/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9/" class="post-title-link" itemprop="url">矩阵的秩</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-04 01:20:04 / 修改时间：01:43:24" itemprop="dateCreated datePublished" datetime="2022-06-04T01:20:04+08:00">2022-06-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%BE%E9%81%93%E6%98%AF%E8%AF%BE%E5%A0%82%E6%8A%A5%E5%91%8A%E5%98%9B/" itemprop="url" rel="index"><span itemprop="name">-难道是课堂报告嘛</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h1><p>要不来写写矩阵的秩吧</p>
+<p>首先我们来介绍一下矩阵秩的定义。书中最早给出秩的定义是通过引入k阶子式的方法进行解释，认为对于某个矩阵A来说，它的最高阶的非零子式的阶数就是矩阵A的秩，记作R(A)。看到这样的定义，相信大多数同学心里都是这样想的：“嗯，我知道什么是矩阵的秩了，我也能去求出它了，但是矩阵的秩到底有什么作用呢？”很有幸，我们的线性代数书本注意到了我们的诉求，后面花费大量篇幅来呈现矩阵的秩的用处，它应用于线性方程组解的判定，向量组是否线性相关或无关的判定，以及是否可以对角化的判定。</p>
+<p>我认为，秩本质上就是有效表达式的个数，其中的有效表达式在不同的情况下有着不同的涵义：在线性方程组中，有效表达式指的就是有效方程组的个数；在列向量中就是线性无关向量的个数。同时我们也要指出的是，线性相关实际上和秩有着密切的关系，初等变换不改变矩阵的秩，而线性相关本质上就是进行初等变换，用某些向量来表示某个向量。当某个向量有能够被线性表示时，矩阵的秩就要在原先个数的基础上减一，然后再次寻找能够被线性表示的向量，再去掉，不断重复，最终留下的线性无关的个数就是矩阵的秩。那么有同学可能会质疑，去掉了那个线性相关的列向量之后，对于后续线性相关的判断是否会产生影响？这显然是不会的，假设之后准备找出的那个向量由被删的向量表示，但是由于被删的向量能够被剩下的其他向量表示，所以不会产生任何影响。</p>
+<p>接下来，讲讲解和秩的关系。在这之前，我们先讲讲线性方程组和列向量之间的关系。在我看来，线性方程组的解本质上就是一个列向量<strong>b</strong>由系数列向量组A线性表达的方式，这个方式也许是唯一的，也许是有无数种表达方式的，也许是找不到表达方式的。这与方程有解，有无数解，无解一一对应。P72定理3说：当 R(<strong>A</strong>) &#x3D; R(<strong>B</strong>) 时，等价于列向量b能够被线性表示，也就是有解。当R(<strong>A</strong>) &lt; R(<strong>B</strong>) 时，等价于列向量b不能够被线性表示，也就是无解。当然，书中详细给出了找到这种表达方式的各种方法，例如做初等行变，并从齐次方程组的角度给出的基础解系的概念，而基础解系是线性无关的，所以基础解系的个数就是基础解析的秩，每一个解向量都是有效的。所以，对于有n个变量的线性方程组，就需要n个有效的的方程去限制才能使它的解唯一。如果有效方程组的个数小于n，则有无数解，则需要通过基础解析去弥补，每少一个有效方程组，则需要多一个线性无关的通解，基础解系的秩也要进行加一。最终能够得到这样一个结论：方程组系数矩阵的秩与基础解系的秩相加等于变量的个数。（P99定理7原话：设m<em>n矩阵A的秩R(<strong>A</strong>)&#x3D; r，则n元齐次线性方程组Ax&#x3D;0的解集S的秩*<em>Rs</em></em>&#x3D;<strong>n-r</strong>）若把列向量进行拓展，变为多个列向量构成的矩阵。这个矩阵有n列则需要由n个解向量去表示。这也就是矩阵乘法的意义之一。</p>
+<p>讲完了矩阵的秩应用于解的判定的相关内容，我们再来讲述矩阵的秩和方阵是否可以对角化的关系。是否能够对角化主要取决于它是否有n个线性无关的特征向量，当然它也存在一个更严格的条件：方阵 A有n个不同的值。因为不同的值所确定的向量一定线性无关，所以也一定有n个线性无关的特征向量。从秩的角度去考虑也就是特征向量的秩为n。</p>
+<p>再解释一个问题：矩阵A的行，列向量的秩为什么与矩阵的秩相同呢？</p>
+<p>列向量的秩等于矩阵的秩通过前面讲述的秩的本质和线性无关的秩的关系即可理解。这里主要讲述列向量为什么等于行向量。我们从向量空间的角度进行考虑。若矩阵的行列个数不等，假设m&gt;n。那么直观上感受，行向量的秩是可以大于列向量的秩的。但是，请把行向量作为一个向量空间。他的变量个数是由列数来控制的，所以它最多只能表示一个n维空间，是个数书中说到“线性无关的向量的个数，就是空间的维数”。所以他的秩最大只能是列向量的秩，而且列向量的秩就是行向量有效变量的个数，也就证明了列向量的秩等于行向量的秩。</p>
+<p>在文章的最后部分，我们提供矩阵的秩相关的等式与不等式以及他们的运用。</p>
+<p>最著名的等式在之前已经提及方程组系数矩阵的秩与基础解系的秩相加等于变量的个数。（P99定理7）用于间接判断基础解系的向量个数十分方便。由它还能得到一个推论（<strong>AB&#x3D;0,则R(A)+R(B)&lt;&#x3D;n</strong>）<strong>A</strong>就是系数矩阵，<strong>B</strong>就是基础解系的组合。还有一个比较有意思的性质（例9：若<strong>AB&#x3D;C</strong>，且<strong>R(A)&#x3D;n</strong>,<strong>R(B)&#x3D;R(C).<strong>），也就是说，若列向量组A线性无关，则当由它表示的列向量</strong>b</strong>有多个且线性无关时，对应的解向量也线性无关。所以，<strong>AB</strong>&#x3D;<strong>0</strong>时，这也就是线性无关的最初定义。当然还有各类不等式，例如，用的时候随机应变，这里不再一一赘述。</p>
+<p>以上便是本人对矩阵的秩的一些见解，由于水平受限，其中存在一定的纰漏，更恳请老师批评指正！</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/27/%E5%8F%AF%E4%BB%A5%E5%8F%91%E9%80%81%E5%90%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -195,7 +272,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-17 13:48:58" itemprop="dateModified" datetime="2022-04-17T13:48:58+08:00">2022-04-17</time>
+                <time title="修改时间：2022-06-04 01:33:56" itemprop="dateModified" datetime="2022-06-04T01:33:56+08:00">2022-06-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -418,14 +495,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
